@@ -15,7 +15,7 @@
     font-size: 18px;
 }
 
-/* Curve text styles */
+        /* Curve text styles */
 .curve-text{
     height: 200px;
     transform: rotate(8deg);
@@ -32,9 +32,9 @@ text{
     fill: #FF9800;
     font-size: -webkit-xxx-large;
   }
-/* End of curve text styles */
+        /* End of curve text styles */
 
-/* CSS animation typewriter effect */
+        /* CSS animation typewriter effect */
 h2, .typewriter {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     white-space: nowrap; /* Keeps the content on a single line */
@@ -45,9 +45,28 @@ h2, .typewriter {
       blink-caret .75s step-end infinite;
   }
   
-  /* The typing effect */
+        /* The typing effect */
   @keyframes typing {
     from { width: 0 }
     to { width: 100% }
   }
- /* End of typewriter styles */ 
+        /* End of typewriter styles */ 
+
+       /* CSS Animation rotating crystals */
+#crystals {
+    -webkit-animation: spin .8s  linear;
+    animation: spin .8s  linear;
+}
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+}
+@keyframes spin {
+    100% {
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
