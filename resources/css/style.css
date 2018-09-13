@@ -15,6 +15,10 @@
     font-size: 18px;
 }
 
+#crystals{
+    height: 350px;
+}
+
         /* Curve text styles */
 .curve-text{
     height: 200px;
