@@ -1,10 +1,12 @@
 $(document).ready(function() {
-    var numberToGuess = 53;
+    var numberToGuess = Math.floor(Math.random() * 100);
     var counter = 0;
     var numb1 = [10];
     var numb2 = [5];
     var numb3 = [3];
     var numb4 = [7];
+
+$('.random-num').text(numberToGuess);
 
 $('numb1 numb2 numb3 numb4').text(numberToGuess);
     for (var i=0; i<numb1.length; i++) {
@@ -47,6 +49,8 @@ $('numb1 numb2 numb3 numb4').text(numberToGuess);
         $('#crystals').append(crystalImage4);
     }
 
+    
+   
 });
 
 
