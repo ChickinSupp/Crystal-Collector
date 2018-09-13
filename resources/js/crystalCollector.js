@@ -1,12 +1,18 @@
 $(document).ready(function() {
-    var numberToGuess = Math.floor(Math.random() * 100);
-    var counter = 0;
-    var numb1 = [10];
-    var numb2 = [5];
-    var numb3 = [3];
-    var numb4 = [7];
+    var 
+    numberToGuess,
+    counter,
+    numb1,
+    numb2,
+    numb3,
+    numb4;
 
-$('.random-num').text(numberToGuess);
+    numberToGuess = Math.floor(Math.random() * 100);
+    counter = 0;
+    numb1 = [6];
+    numb2 = [5,];
+    numb3 = [1];
+    numb4 = [2];
 
 $('numb1 numb2 numb3 numb4').text(numberToGuess);
     for (var i=0; i<numb1.length; i++) {
@@ -49,8 +55,38 @@ $('numb1 numb2 numb3 numb4').text(numberToGuess);
         $('#crystals').append(crystalImage4);
     }
 
-    
+    $('.random-num').text(numberToGuess);
    
+    $('#reset').on('click', function() {
+        reset();
+    });
+
+    function reset() {
+      counter = 0;      
+      $('#yourNumber').text(counter);
+      numb1 = [2];
+      numb2 = [1];
+      numb3 = [5];
+      numb4 = [6];
+      $('numb1 numb2 numb3 numb4').text(numberToGuess);
+    };
+
+    $('.crystal-image').on('click', function(){
+      counter = counter + parseInt($(this).data('num'));
+      
+    $('#yourNumber').text(counter);
+         switch(true){
+             case counter == numberToGuess:
+                alert('You Won!');
+                reset(numberToGuess);
+             break;
+            case counter > numberToGuess:
+                alert('You Lose!');
+                reset(numberToGuess);
+            default: numberToGuess;
+         } 
+
+    });  
 });
 
 
